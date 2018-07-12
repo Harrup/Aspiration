@@ -68,19 +68,19 @@ export default class Filter extends Component {
               <span className="title">Extras</span>
               <label htmlFor="extras">
                 <span>Elevator</span>
-                <input name="extras" type="checkbox" value="elevator" onChange={this.props.change} />
+                <input name="elevator" type="checkbox" value="elevator" onChange={this.props.change} />
               </label>
               <label htmlFor="extras">
                 <span>Swimming Pool</span>
-                <input name="extras" type="checkbox" value="swimming-pool" onChange={this.props.change} />
+                <input name="pool" type="checkbox" value="swimming-pool" onChange={this.props.change} />
               </label>
               <label htmlFor="extras">
                 <span>Finished Basement</span>
-                <input name="extras" type="checkbox" value="finished-basement" onChange={this.props.change} />
+                <input name="basement" type="checkbox" value="finished-basement" onChange={this.props.change} />
               </label>
               <label htmlFor="extras">
                 <span>Gym</span>
-                <input name="extras" type="checkbox" value="gym" onChange={this.props.change} />
+                <input name="gym" type="checkbox" value="gym" onChange={this.props.change} />
               </label>
             </div>
           </div>

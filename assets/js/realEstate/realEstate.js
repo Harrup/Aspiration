@@ -21,7 +21,11 @@ class App extends Component {
       formsData: '',
       sortby: 'price-asc',
       view: "box",
-      search:""
+      search:"",
+      elevator:false,
+      pool:false,
+      basement:false,
+      gym:false
     }
     this.change = this.change.bind(this)
     this.filteredData = this.filteredData.bind(this)
@@ -45,8 +49,9 @@ class App extends Component {
     var name = event.target.name
     var value = (event.target.type === 'checkbox') ? event.target.checked : event.target.value
     this.setState({[name]:value}, () => {
-      console.log(this.state)
+      // console.log(this.state)
       this.filteredData()
+      this.changeViews()
     })
   }
   filteredData(){
@@ -82,6 +87,26 @@ class App extends Component {
           if(n != null){
             return true
           }
+        })
+      }
+      if(this.state.gym == true){
+        newData = newData.filter((item) =>{
+          return item.gym == this.state.gym
+        })
+      }
+      if(this.state.elevator == true){
+        newData = newData.filter((item) =>{
+          return item.elevator == this.state.elevator
+        })
+      }
+      if(this.state.pool == true){
+        newData = newData.filter((item) =>{
+          return item.pool == this.state.pool
+        })
+      }
+      if(this.state.basement == true){
+        newData = newData.filter((item) =>{
+          return item.basement == this.state.basement
         })
       }
     this.setState({filteredData: newData})

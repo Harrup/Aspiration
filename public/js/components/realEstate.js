@@ -16,7 +16,10 @@ var listingsData = [{
   rooms: 3,
   price: 2000000,
   floorspace: 2800,
-  extras: ['pool', 'basement', 'gym'],
+  elevator: false,
+  pool: true,
+  basement: true,
+  gym: true,
   hometype: 'house',
   image: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 }, {
@@ -26,7 +29,10 @@ var listingsData = [{
   rooms: 2,
   price: 800000,
   floorspace: 2100,
-  extras: ['pool', 'elevator', 'gym'],
+  elevator: true,
+  pool: true,
+  basement: false,
+  gym: true,
   hometype: 'apartment',
   image: 'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350'
 }, {
@@ -36,7 +42,10 @@ var listingsData = [{
   rooms: 2,
   price: 1800000,
   floorspace: 2500,
-  extras: ['pool', 'elevator', 'gym'],
+  elevator: true,
+  pool: true,
+  basement: false,
+  gym: true,
   hometype: 'apartment',
   image: 'https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350'
 }, {
@@ -46,7 +55,10 @@ var listingsData = [{
   rooms: 3,
   price: 600000,
   floorspace: 1600,
-  extras: ['pool', 'basement'],
+  elevator: false,
+  pool: true,
+  basement: true,
+  gym: false,
   hometype: 'house',
   image: 'https://images.pexels.com/photos/164516/pexels-photo-164516.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350'
 }, {
@@ -56,7 +68,10 @@ var listingsData = [{
   rooms: 3,
   price: 639000,
   floorspace: 2200,
-  extras: ['pool', 'basement', 'gym'],
+  elevator: false,
+  pool: true,
+  basement: true,
+  gym: true,
   hometype: 'house',
   image: 'https://images.pexels.com/photos/259600/pexels-photo-259600.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350'
 }, {
@@ -66,7 +81,10 @@ var listingsData = [{
   rooms: 2,
   price: 402000,
   floorspace: 500,
-  extras: ['pool'],
+  elevator: false,
+  pool: true,
+  basement: false,
+  gym: false,
   hometype: 'apartment',
   image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350'
 }, {
@@ -76,7 +94,10 @@ var listingsData = [{
   rooms: 4,
   price: 998000,
   floorspace: 1300,
-  extras: ['basement'],
+  elevator: false,
+  pool: false,
+  basement: true,
+  gym: false,
   hometype: 'house',
   image: 'https://images.pexels.com/photos/1030555/pexels-photo-1030555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350'
 }, {
@@ -86,7 +107,10 @@ var listingsData = [{
   rooms: 5,
   price: 5200000,
   floorspace: 2300,
-  extras: ['basement', 'pool', 'gym'],
+  elevator: false,
+  pool: true,
+  basement: true,
+  gym: true,
   hometype: 'house',
   image: 'https://images.pexels.com/photos/534182/pexels-photo-534182.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350'
 }, {
@@ -96,7 +120,10 @@ var listingsData = [{
   rooms: 2,
   price: 553200,
   floorspace: 1300,
-  extras: ['elevator', 'pool', 'gym'],
+  elevator: true,
+  pool: true,
+  basement: false,
+  gym: true,
   hometype: 'apartment',
   image: 'https://images.pexels.com/photos/439391/pexels-photo-439391.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350'
 }, {
@@ -106,7 +133,10 @@ var listingsData = [{
   rooms: 3,
   price: 714000,
   floorspace: 1540,
-  extras: ['gym'],
+  elevator: false,
+  pool: false,
+  basement: false,
+  gym: true,
   hometype: 'apartment',
   image: 'https://images.pexels.com/photos/323774/pexels-photo-323774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350'
 }, {
@@ -116,7 +146,10 @@ var listingsData = [{
   rooms: 3,
   price: 630000,
   floorspace: 1732,
-  extras: ['gym'],
+  elevator: false,
+  pool: false,
+  basement: false,
+  gym: true,
   hometype: 'apartment',
   image: 'https://images.pexels.com/photos/302186/pexels-photo-302186.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350'
 }, {
@@ -126,7 +159,10 @@ var listingsData = [{
   rooms: 3,
   price: 942300,
   floorspace: 1900,
-  extras: ['basement'],
+  elevator: false,
+  pool: false,
+  basement: true,
+  gym: false,
   hometype: 'house',
   image: 'https://images.pexels.com/photos/259751/pexels-photo-259751.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350'
 }];
@@ -200,7 +236,11 @@ var App = function (_Component) {
       formsData: '',
       sortby: 'price-asc',
       view: "box",
-      search: ""
+      search: "",
+      elevator: false,
+      pool: false,
+      basement: false,
+      gym: false
     };
     _this.change = _this.change.bind(_this);
     _this.filteredData = _this.filteredData.bind(_this);
@@ -234,8 +274,9 @@ var App = function (_Component) {
       var name = event.target.name;
       var value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
       this.setState(_defineProperty({}, name, value), function () {
-        console.log(_this2.state);
+        // console.log(this.state)
         _this2.filteredData();
+        _this2.changeViews();
       });
     }
   }, {
@@ -274,6 +315,26 @@ var App = function (_Component) {
           if (n != null) {
             return true;
           }
+        });
+      }
+      if (this.state.gym == true) {
+        newData = newData.filter(function (item) {
+          return item.gym == _this3.state.gym;
+        });
+      }
+      if (this.state.elevator == true) {
+        newData = newData.filter(function (item) {
+          return item.elevator == _this3.state.elevator;
+        });
+      }
+      if (this.state.pool == true) {
+        newData = newData.filter(function (item) {
+          return item.pool == _this3.state.pool;
+        });
+      }
+      if (this.state.basement == true) {
+        newData = newData.filter(function (item) {
+          return item.basement == _this3.state.basement;
         });
       }
       this.setState({ filteredData: newData });
@@ -526,7 +587,7 @@ var Filter = function (_Component) {
                 null,
                 "Elevator"
               ),
-              _react2.default.createElement("input", { name: "extras", type: "checkbox", value: "elevator", onChange: this.props.change })
+              _react2.default.createElement("input", { name: "elevator", type: "checkbox", value: "elevator", onChange: this.props.change })
             ),
             _react2.default.createElement(
               "label",
@@ -536,7 +597,7 @@ var Filter = function (_Component) {
                 null,
                 "Swimming Pool"
               ),
-              _react2.default.createElement("input", { name: "extras", type: "checkbox", value: "swimming-pool", onChange: this.props.change })
+              _react2.default.createElement("input", { name: "pool", type: "checkbox", value: "swimming-pool", onChange: this.props.change })
             ),
             _react2.default.createElement(
               "label",
@@ -546,7 +607,7 @@ var Filter = function (_Component) {
                 null,
                 "Finished Basement"
               ),
-              _react2.default.createElement("input", { name: "extras", type: "checkbox", value: "finished-basement", onChange: this.props.change })
+              _react2.default.createElement("input", { name: "basement", type: "checkbox", value: "finished-basement", onChange: this.props.change })
             ),
             _react2.default.createElement(
               "label",
@@ -556,7 +617,7 @@ var Filter = function (_Component) {
                 null,
                 "Gym"
               ),
-              _react2.default.createElement("input", { name: "extras", type: "checkbox", value: "gym", onChange: this.props.change })
+              _react2.default.createElement("input", { name: "gym", type: "checkbox", value: "gym", onChange: this.props.change })
             )
           )
         )
