@@ -4,10 +4,10 @@ export default class Header extends Component {
   constructor () {
     super()
   }
-  
+
   render () {
     return (<header>
-              <div className="logo">Logo</div>
+              <div className="logo">Aspiration</div>
                 <nav>
                   <a href="#">Create Ads</a>
                   <a href="#">About us</a>

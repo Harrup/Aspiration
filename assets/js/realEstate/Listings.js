@@ -6,19 +6,24 @@ export default class Listings extends Component {
 
     this.loopListings = this.loopListings.bind(this)
   }
-
-  loopListings (){
+  loopListings(){
     var {listingsData} = this.props
     if (listingsData.length == 0 || listingsData == undefined ){
       return(<div>No items with the applied filter are currently available</div>)
     }
     return(listingsData.map((listing, index) => {
       if(this.props.globalState.view == "box"){
+        var divStyle = {
+        background: `url("${listing.image}") no-repeat center center`,
+        backgroundSize:'cover',
+        width:'100%',
+        height:'auto'
+      }
         //THIS IS THE BOX VIEW
         return(
           <div className="col-lg-4" key={index}>
             <div className="listing">
-              <div className="listing-img" style={{background: `url("${listing.image}") no-repeat center center`,backgroundSize:'100% 100%'}}>
+              <div className="listing-img" style={divStyle}>
                 <span className="adress">{listing.adress}</span>
                 <div className="details">
                   <div className="user-img-grp">
@@ -54,7 +59,7 @@ export default class Listings extends Component {
       return(
         <div className="col-md-12 col-lg-6" key={index}>
           <div className="listing">
-            <div className="listing-img" style={{background: `url("${listing.image}") no-repeat center center`}}>
+            <div className="listing-img" style={{background: `url("${listing.image}") no-repeat center center`,backgroundSize:'100% 100%'}}>
               <span className="adress">{listing.adress}</span>
               <div className="details">
                 <div className="col-md-3">
@@ -87,6 +92,7 @@ export default class Listings extends Component {
       )
     }))
   }
+
   render () {
     return (
       <section id="listings">

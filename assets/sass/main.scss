@@ -3,7 +3,7 @@
 @import "reset";
 @import "variables";
 @import "grid";
-
+@import "listings";
 *,
 body,
 html {
@@ -11,5 +11,5 @@ html {
   // background: purple;
   box-sizing: border-box;
 }
-@import "listings";
+
 @import "content-area";
