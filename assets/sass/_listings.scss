@@ -29,3 +29,19 @@ header{
   float: left;
   letter-spacing: 3px;
 }
+
+/* Responsive */
+/* Phones */
+@media only screen and (max-width:767px){
+ nav{
+   display: none;
+ }
+}
+
+/* Responsive */
+/* Tablet */
+@media only screen and (max-width:960px){
+  .container{
+    width: 100%;
+  }
+}

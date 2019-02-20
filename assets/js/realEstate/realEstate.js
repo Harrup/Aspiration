@@ -48,10 +48,12 @@ class App extends Component {
   change(event){
     var name = event.target.name
     var value = (event.target.type === 'checkbox') ? event.target.checked : event.target.value
-    this.setState({[name]:value}, () => {
-      // console.log(this.state)
+    this.setState({
+      [name]:value
+    }, () => {
+       console.log(this.state)
       this.filteredData()
-      this.changeViews()
+      //this.changeViews()
     })
   }
   filteredData(){
@@ -109,7 +111,9 @@ class App extends Component {
           return item.basement == this.state.basement
         })
       }
-    this.setState({filteredData: newData})
+    this.setState({
+      filteredData: newData
+    })
   }
   populateForm(){
     //cities
@@ -147,9 +151,9 @@ class App extends Component {
   }
   render () {
     return (
-      <div>
+      <div className="container">
         <Header />
-        <section>
+        <section id="content">
             <Filter globalState={this.state} change={this.change} populateAction={this.populateForm} />
             <Listings globalState={this.state} listingsData={this.state.filteredData} change={this.change} changeViews={this.changeViews} />
         </section>

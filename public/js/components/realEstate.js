@@ -274,9 +274,9 @@ var App = function (_Component) {
       var name = event.target.name;
       var value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
       this.setState(_defineProperty({}, name, value), function () {
-        // console.log(this.state)
+        console.log(_this2.state);
         _this2.filteredData();
-        _this2.changeViews();
+        //this.changeViews()
       });
     }
   }, {
@@ -337,7 +337,9 @@ var App = function (_Component) {
           return item.basement == _this3.state.basement;
         });
       }
-      this.setState({ filteredData: newData });
+      this.setState({
+        filteredData: newData
+      });
     }
   }, {
     key: 'populateForm',
@@ -380,11 +382,11 @@ var App = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'container' },
         _react2.default.createElement(_Header2.default, null),
         _react2.default.createElement(
           'section',
-          null,
+          { id: 'content' },
           _react2.default.createElement(_Filter2.default, { globalState: this.state, change: this.change, populateAction: this.populateForm }),
           _react2.default.createElement(_Listings2.default, { globalState: this.state, listingsData: this.state.filteredData, change: this.change, changeViews: this.changeViews })
         )

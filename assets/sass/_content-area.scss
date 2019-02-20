@@ -1,250 +1,249 @@
-#filter{
-  background: $gray;
-  width:30%;
-  max-width: 300px;
-  display: inline-block;
-  float: left;
-  .inside{
-    padding: 20px;
-    max-width: 300px;
-  }
-  h4{
-    font-size: 0.9rem;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    font-weight: 500px;
-  }
-.title{
-  font-size: 0.9rem;
-  display: block;
-  margin-bottom: 1rem;
-  color: #828d9d;
-}
-  select{
-    background: transparent;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: 300;
-    color: #1b1b1b;
-    display: block;
-    margin-bottom: 25px;
-    width: 100%;
-  }
-  .filters{
-    .title{
-      font-size: 0.9rem;
-      display: block;
-      margin-bottom: 1rem;
-      color:$darkgray;
+#content{
+  display: grid;
+  grid-template-columns: 0.4fr 1.5fr;
+  #filter{
+    background: $gray;
+    //width:30%;
+    //max-width: 300px;
+    //display: inline-block;
+    //float: left;
+    .inside{
+      padding: 20px;
+      max-width: 300px;
     }
-      input[type="text"] {
-        border-radius: 5px;
-        font-size: 1rem;
-        padding: 0.4rem;
-        width: 45%;
-        display: inline-block;
-        margin-right: 2.5%;
+    h4{
+      font-size: 0.9rem;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      font-weight: 500px;
+    }
+  .title{
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 1rem;
+    color: #828d9d;
+  }
+    select{
+      background: transparent;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: 300;
+      color: #1b1b1b;
+      display: block;
+      margin-bottom: 25px;
+      width: 100%;
+    }
+    .filters{
+      .title{
+        font-size: 0.9rem;
+        display: block;
         margin-bottom: 1rem;
+        color:$darkgray;
       }
-      &.extras{
-        label{
-          display: block;
-          width:100%;
-          padding: 10px 0;
-          input[type="checkbox"]{
-            float:right;
+        input[type="text"] {
+          border-radius: 5px;
+          font-size: 1rem;
+          padding: 0.4rem;
+          width: 100px;
+          display: inline-block;
+          margin-right: 5px;
+          margin-bottom: 1rem;
+        }
+        &.extras{
+          label{
+            display: block;
+            width:100%;
+            padding: 10px 0;
+            input[type="checkbox"]{
+              float:right;
+            }
+          }
+        }
+      }
+  }
+  #listings{
+    //width: 70%;
+    //float: left;
+    display: inline-block;
+    padding: 15px;
+    background: $offwhite;
+
+    .search-area{
+      input[type="text"]{
+        //width: 70%;
+        width: 100%;
+        background: transparent;
+        font-size: 2rem;
+        border: none;
+        border-bottom: 1px solid $darkgray;
+        margin-bottom: 20px;
+        color: $lightgray;
+        font-weight: 100;
+      }
+    }
+    .sortby-area{
+      .results{
+        font-size: 0.8rem;
+        margin-bottom:20px;
+        color: $darkgray;
+        display: inline-block;
+      }
+    .sort-options{
+      float: right;
+      select{
+        font-size: 0.9rem;
+        font-weight: 300;
+        border: 1px solid $lightgray;
+        background: transparent;
+        padding: 5px;
+        display: inline-block;
+        margin-right: 15px;
+        vertical-align: top;
+      }
+      .view{
+        display: inline-block;
+        .fa{
+          font-size: 1.5rem;
+          margin-right: 15px;
+          &:hover{
+            cursor: pointer;
           }
         }
       }
     }
-}
-#listings{
-  width: 70%;
-  float: left;
-  display: inline-block;
-  padding: 15px;
-  background: $offwhite;
-
-  .search-area{
-    input[type="text"]{
-      width: 70%;
-      background: transparent;
-      font-size: 2rem;
-      border: none;
-      border-bottom: 1px solid $darkgray;
-      margin-bottom: 20px;
-      color: $lightgray;
-      font-weight: 100;
     }
-  }
-  .sortby-area{
-    .results{
-      font-size: 0.8rem;
-      margin-bottom:20px;
-      color: $darkgray;
-      display: inline-block;
-    }
-  .sort-options{
-    float: right;
-    select{
-      font-size: 0.9rem;
-      font-weight: 300;
-      border: 1px solid $lightgray;
-      background: transparent;
-      padding: 20px;
-      display: inline-block;
-      margin-right: 15px;
-      vertical-align: top;
-    }
-    .view{
-      display: inline-block;
-      .fa{
-        font-size: 1.5rem;
-        margin-right: 15px;
-        &:hover{
-          cursor: pointer;
-        }
+    .listings-results{
+      margin-bottom: 60px;
+      .listing{
+        background: white;
+        border-radius: 5px;
+        -webkit-box-shadow: -1px 10px 49px -6px rgba(207,205,207,1);
+        -moz-box-shadow: -1px 10px 49px -6px rgba(207,205,207,1);
+        box-shadow: -1px 10px 49px -6px rgba(207,205,207,1);
       }
-    }
-  }
-  }
-  .listings-results{
-    margin-bottom: 60px;
-    .listing{
-      background: white;
-      border-radius: 5px;
-      -webkit-box-shadow: -1px 10px 49px -6px rgba(207,205,207,1);
-      -moz-box-shadow: -1px 10px 49px -6px rgba(207,205,207,1);
-      box-shadow: -1px 10px 49px -6px rgba(207,205,207,1);
-    }
-    .listing-img{
-      background-size: 100%;
-      color: white;
-      padding: 15px;
-      position: relative;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      min-height:200px;
-      -webkit-border-top-left-radius: 5px;
-      -webkit-border-top-right-radius: 5px;
-      -moz-border-radius-topleft: 5px;
-      -moz-border-radius-topright: 5px;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      &:hover{
-        .details{
-          opacity: 1;
+      .listing-img{
+        background-size: 100%;
+        color: white;
+        padding: 15px;
+        position: relative;
+        background-size: cover !important;
+        min-height:200px;
+        border-top-left-radius: 5px !important;
+        border-top-right-radius: 5px !important;
+        &:hover{
+          .details{
+            opacity: 1;
+          }
+          .adress{
+            opacity: 0;
+          }
         }
         .adress{
+          transition: all .6s ease-in-out;
+          position: absolute;
+          bottom: 20px;
+          opacity: 1;
+        }
+        .details{
+          transition: all .6s ease-in-out;
           opacity: 0;
+          padding: 30px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          -webkit-border-top-left-radius: 5px;
+          -webkit-border-top-right-radius: 5px;
+          -moz-border-radius-topleft: 5px;
+          -moz-border-radius-topright: 5px;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b219ea+1,d87bb9+100,7500f2+100 */
+            background: rgb(178,25,234); /* Old browsers */
+            background: -moz-linear-gradient(-45deg, rgba(178,25,234,0.8) 1%, rgba(216,123,185,.8) 100%, rgba(117,0,242,.8) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, rgba(178,25,234,.8) 1%,rgba(216,123,185,.8) 100%,rgba(117,0,242,.8) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, rgba(178,25,234,.8) 1%,rgba(216,123,185,.8) 100%,rgba(117,0,242,.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b219ea', endColorstr='#7500f2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            .user-img-grp{
+              display: inline-block;
+              padding-bottom: 36%;
+            }
+            .user-details-grp{
+              display: inline-block;
+              padding: 10px;
+              position: absolute;
+            }
+            .user-img{
+              width: 35px;
+              height:35px;
+              float: right;
+              border-radius: 50%;
+              border: 2px solid white;
+              display: inline-block;
+              background: url("https://images.unsplash.com/photo-1455275505851-8e604db9675a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fce33a59b5a12987d31d3b767f4e6e25&auto=format&fit=crop&w=800&q=60") no-repeat center center;
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+            }
+            .user-details{
+              display: inline-block;
+              vertical-align: top;
+
+              .user-name{
+                font-weight: 300;
+                font-size: 0.9rem;
+                display: block;
+                color: white;
+                margin-bottom: 5px;
+              }
+              .post-date{
+                font-size: 0.9rem;
+                display: block;
+                color: rgba(255,255,255,0.8);
+              }
+            }
+            .listing-details{
+                margin-top: 20px;
+                margin-bottom: 10px;
+                .fa{
+                  display: inline-block;
+                  font-size: 20px;
+                  margin-right: 15px;
+                }
+                span{
+                  display: inline-block;
+                  font-size: 0.6rem;
+                  font-weight: 300;
+                  vertical-align: top;
+                  position: relative;
+                  top: 3px;
+                }
+                .floor-space{
+                  margin-bottom: 10px;
+                }
+            }
         }
       }
-      .adress{
-        transition: all .6s ease-in-out;
-        position: absolute;
-        bottom: 20px;
-        opacity: 1;
-      }
-      .details{
-        transition: all .6s ease-in-out;
-        opacity: 0;
-        padding: 30px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        -webkit-border-top-left-radius: 5px;
-        -webkit-border-top-right-radius: 5px;
-        -moz-border-radius-topleft: 5px;
-        -moz-border-radius-topright: 5px;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b219ea+1,d87bb9+100,7500f2+100 */
-          background: rgb(178,25,234); /* Old browsers */
-          background: -moz-linear-gradient(-45deg, rgba(178,25,234,0.8) 1%, rgba(216,123,185,.8) 100%, rgba(117,0,242,.8) 100%); /* FF3.6-15 */
-          background: -webkit-linear-gradient(-45deg, rgba(178,25,234,.8) 1%,rgba(216,123,185,.8) 100%,rgba(117,0,242,.8) 100%); /* Chrome10-25,Safari5.1-6 */
-          background: linear-gradient(135deg, rgba(178,25,234,.8) 1%,rgba(216,123,185,.8) 100%,rgba(117,0,242,.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b219ea', endColorstr='#7500f2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-          .user-img-grp{
-            display: inline-block;
-            padding-bottom: 36%;
-          }
-          .user-details-grp{
-            display: inline-block;
-            padding: 10px;
-            position: absolute;
-          }
-          .user-img{
-            width: 35px;
-            height:35px;
-            float: right;
-            border-radius: 50%;
-            border: 2px solid white;
-            display: inline-block;
-            background: url("https://images.unsplash.com/photo-1455275505851-8e604db9675a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fce33a59b5a12987d31d3b767f4e6e25&auto=format&fit=crop&w=800&q=60") no-repeat center center;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-          }
-          .user-details{
-            display: inline-block;
-            vertical-align: top;
-
-            .user-name{
-              font-weight: 300;
-              font-size: 0.9rem;
-              display: block;
-              color: white;
-              margin-bottom: 5px;
-            }
-            .post-date{
-              font-size: 0.9rem;
-              display: block;
-              color: rgba(255,255,255,0.8);
-            }
-          }
-          .listing-details{
-              margin-top: 20px;
-              margin-bottom: 10px;
-              .fa{
-                display: inline-block;
-                font-size: 20px;
-                margin-right: 15px;
-              }
-              span{
-                display: inline-block;
-                font-size: 0.6rem;
-                font-weight: 300;
-                vertical-align: top;
-                position: relative;
-                top: 3px;
-              }
-              .floor-space{
-                margin-bottom: 10px;
-              }
-          }
-      }
-    }
-    .bottom-info{
-      padding: 20px 15px;
-      .price{
-        font-size: 0.8rem;
-        display: block;
-        margin-bottom: 10px;
-        color: $darkgray;
-      }
-      .location{
-        font-size: 1rem;
-        display: block;
-        color: $lightgray;
+      .bottom-info{
+        padding: 20px 15px;
+        .price{
+          font-size: 0.8rem;
+          display: block;
+          margin-bottom: 10px;
+          color: $darkgray;
+        }
+        .location{
+          font-size: 1rem;
+          display: block;
+          color: $lightgray;
+        }
       }
     }
   }
 }
+
 .view-btn{
   background: black;
   padding: 8px;
@@ -278,6 +277,34 @@
         font-weight: 700;
         color: white;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+/* Responsive */
+/* Phones */
+@media only screen and (max-width:767px){
+  #content{
+    grid-template-columns: 1fr;
+    #pagination{
+      display: none;
+    }
+  }
+}
+
+/* Responsive */
+/* Tablet */
+@media only screen and (max-width:960px){
+  .container{
+    width: 100%;
+  }
+  #content{
+    grid-template-columns: 1fr;
+    #filter{
+      .inside{
+        max-width: 400px;
+        margin: 0 auto;
       }
     }
   }
